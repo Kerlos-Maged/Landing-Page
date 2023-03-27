@@ -1,0 +1,302 @@
+/* Global  */
+:root {
+  --main-color: #ff589e;
+  --secondry-color:  #1e1e1e;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+body { 
+  font-family: "Raleway", sans-serif;
+  background-color: #eeee;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* End Global */
+
+/* Start Header  */
+.logo {
+  z-index: 999;
+}
+
+header {
+  z-index: 999;
+  background-color: #fff;
+  border-radius: 90px;
+  position: fixed;
+  top: 3%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1100px;
+  max-width: 95%;
+
+}
+
+header .container {
+  position: relative;
+  width: 100%;
+  display: flex;  
+  padding: 25px ;
+  align-items: center;
+  justify-content: space-between;
+}
+header .container .nav .links{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .container .nav .links li {
+  margin: 0px 13px;
+}
+
+header .container .nav .links li a{
+  color: var(--secondry-color);
+  font-size: 15px;
+}
+
+header .nav .links li a.active, header .nav .links li a:hover{
+  color: var(--main-color);
+}
+.menu {
+  display: none;
+  z-index: 9999;
+  width: 25px;
+  height: 22px;
+  position: relative;
+  cursor: pointer;
+}
+.menu::after, .menu::before, .menu span {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: var(--secondry-color);
+  position: absolute;  transition: 0.4s;
+  border-radius: 10px;
+}
+.menu::after {
+  top: 0;
+  left: 0;  transition: 0.4s;
+}
+.menu::before {
+  bottom: 0;  transition: 0.4s;
+  left: 0;
+}
+.menu span {
+  transform: translateY(-50%);
+  top: 50%;  transition: 0.4s;
+  left: 0;
+}
+.menu.active span{  
+  display: none;
+}
+.menu.active:before {
+  transition: 0.4s;
+  transform: rotate(45deg) translate(-6px , -6px);
+}
+.menu.active:after {  transition: 0.4s;
+  transform: rotate(-45deg) translate(-6px , 7px);
+}
+
+.landing {
+  background-image: url(../images/banner-bg.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  height: 100vh;
+}
+.welcome-txt {
+  width: 600px;
+  max-width: 100%;
+  text-align: center;
+}
+.welcome-txt h2 {
+  font-size: 40px;
+  color: #fff;
+}
+.welcome-txt p {
+  font-size: 20px ;
+  color: #eeeeee;
+  margin: 15px 0px;
+}
+.btn {
+  color: white;
+  padding: 8px 20px;
+  background-color: var(--main-color);
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: all 0.4s ease-out;
+}
+.btn:hover{
+  background-color: #8261ee;
+}
+
+.features {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.cards {
+  width: 1200px;
+  margin: 0px auto;
+  display: grid;
+  gap: 10px;  
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+.card {
+  width: 360px;
+  background-color: #Fff;
+  margin-bottom: 20px;
+  text-align: center;
+  border-radius: 28px;
+  padding: 15px 20px;
+  max-width: 100%;
+  cursor: pointer;
+  margin: 0px 40px;
+}
+.card:hover .icon {
+  transition: all 0.4s ease-in-out;
+  background-color: var(--main-color);
+
+}
+.card .icon {
+  background-color: #8261ee;
+  width: fit-content;
+  padding: 18px;
+  border-radius: 50%;
+  margin: 15px auto;
+}
+.card p{ 
+  margin: 16px 0px;
+}
+
+@media screen and (max-width:400px) {
+  .cards {
+    width: 100%;
+  }
+  .card {
+    padding: 15px 10px;
+    width: 90%;
+    margin: 0px 20px;
+  }
+  .card:hover .icon {
+    transition: all 0.4s ease-in-out;
+    background-color: var(--main-color);
+  
+  }
+}
+@media screen and (max-width: 992px){
+  header {
+    width: 700px;
+  }
+  header .container .nav  {
+    position: absolute;
+    top: 55%;
+    width: 100%;
+    left: 0;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out; 
+  }
+  header .container .nav .links {
+    display: flex;
+    padding-top: 26px;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    border-radius: 0px 0px  40px 40px;
+  }
+  header .container .nav.active , header .container .nav.active .links{
+    height: 420px;
+    transition: all 0.4s ease-in-out;
+  }
+  header .container .nav .links li a:not(:last-child) {
+    border-bottom: 1px solid #eeeeee;
+  }
+  header .container .nav .links li a:hover {
+    background-color: #f1f1f1;
+  }
+  header .container .nav .links li a:first-child {
+    border-top: 1px solid #eeeeee;
+  }
+  header .container .nav .links li {
+    width: 100%;
+  }
+  header .container .nav .links li a {
+    display: block;
+    width: 100%;
+    padding: 18px 0px;
+    text-align: center;
+  }
+  .menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 1200px){
+  .features {
+    position: relative;
+  }
+  .card {
+    width: 300px;
+    padding: 20px 10px;
+  }
+  .cards {
+    width: 90%;
+    margin: 0px auto;
+  }
+}
+
+@media screen and (max-width:700px){
+  .card {
+    width: 100%;
+    margin: 0px auto;
+  }
+  .welcome-txt {
+    width: 300px;
+    max-width: 100%;
+  }
+  .welcome-txt h2 {
+    font-size: 28px;
+    color: #fff;
+  }
+  .welcome-txt p {
+    font-size: 20px ;
+    color: #eeeeee;
+    margin: 15px 0px;
+  }
+  .btn {
+    color: white;
+    padding: 8px 20px;
+    background-color: var(--main-color);
+    margin-top: 10px;
+    border-radius: 10px;
+    transition: all 0.4s ease-out;
+  }
+  .btn:hover{
+    background-color: #8261ee;
+  }
+  
+}
+/* End Header */
+

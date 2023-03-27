@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style/styel.css">
+  <title>Landing Page</title>
+</head>
+<body>
+  
+
+  <!-- Start Header Navbar -->
+  
+  <header>
+    <div class="container">
+      <div class="logo">
+        <img src="./assets/images/logo.png" alt="Logo Image">
+      </div>
+      <nav class="nav">
+        <ul class="links">
+          <li><a href="#" class="active">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Work Process</a></li>
+          <li><a href="#">Testimonials</a></li>
+          <li><a href="#">Pricing Tables</a></li>
+          <li><a href="#">Blog Entries</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </nav>
+      <div class="menu">
+        <span></span>
+      </div> 
+    </div>
+  </header>
+
+  <!-- End Header Navbar -->
+
+
+  <!-- Start Section -->
+
+  <section class="landing">
+      <div class="container">
+        <div class="welcome-txt">
+          <h2>We provide the best strategyto grow up your business</h2>
+          <p>Softy Pinko is a professional Bootstrap 4.0 theme designed by Template Mo for your company at absolutely free of charge</p>
+          <a class="btn" href="#">DISCOVER MORE</a>
+        </div>
+      </div>
+  </section>
+
+  <section class="features">
+    <div class="cards">
+      <div class="card">
+        <div class="icon">
+          <img src="./assets/images/featured-item-01.png" alt="">
+        </div>
+        <h3 class="head-card">Modern Strategy</h3>
+        <p>Customize anything in this template to fit your website needs</p>
+      </div>
+      <div class="card">
+        <div class="icon">        <img src="./assets/images/featured-item-01.png" alt="">
+        </div>
+        <h3 class="head-card">Best Relationship</h3>
+        <p>Contact us immediately if you have a question in mind</p>
+      </div>
+      <div class="card">
+        <div class="icon">        <img src="./assets/images/featured-item-01.png" alt="">
+        </div>
+        <h3 class="head-card">Modern Strategy</h3>
+        <p>You just need to tell your friends about our free templates</p>
+      </div>
+    </div>
+
+  </section>
+  <!-- End Section -->
+
+
+  
+  <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+  <script>
+    let menu = document.querySelector('.menu');
+    let links = document.querySelector('.nav')
+    menu.onclick = function() {
+      links.classList.toggle('active')
+      menu.classList.toggle('active')
+    }
+  </script>
+</body>
+</html>
