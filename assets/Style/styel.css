@@ -43,7 +43,7 @@ header {
 
 }
 
-header .container {
+header .container-head {
   position: relative;
   width: 100%;
   display: flex;  
@@ -51,24 +51,27 @@ header .container {
   align-items: center;
   justify-content: space-between;
 }
-header .container .nav .links{
+header .container-head .links{
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all .4s ease-in-out, padding 0s ease-in-out;
+  /* combine transition properties */
 }
 
-header .container .nav .links li {
+header .container-head  .links li {
   margin: 0px 13px;
 }
 
-header .container .nav .links li a{
+header .container-head  .links li a{
   color: var(--secondry-color);
   font-size: 15px;
 }
 
-header .nav .links li a.active, header .nav .links li a:hover{
+header  .links li a.active, header  .links li a:hover{
   color: var(--main-color);
 }
+
 .menu {
   display: none;
   z-index: 9999;
@@ -87,15 +90,18 @@ header .nav .links li a.active, header .nav .links li a:hover{
 }
 .menu::after {
   top: 0;
-  left: 0;  transition: 0.4s;
+  left: 0;  
+  transition: 0.4s;
 }
 .menu::before {
-  bottom: 0;  transition: 0.4s;
+  bottom: 0;  
+  transition: 0.4s;
   left: 0;
 }
 .menu span {
   transform: translateY(-50%);
-  top: 50%;  transition: 0.4s;
+  top: 50%; 
+  transition: 0.4s;
   left: 0;
 }
 .menu.active span{  
@@ -123,6 +129,7 @@ header .nav .links li a.active, header .nav .links li a:hover{
 }
 .welcome-txt {
   width: 600px;
+  margin: 0px auto;
   max-width: 100%;
   text-align: center;
 }
@@ -153,9 +160,13 @@ header .nav .links li a.active, header .nav .links li a:hover{
   bottom: 0;
 }
 
-.cards {
+.container {
   width: 1200px;
   margin: 0px auto;
+  max-width: 90%;
+}
+
+.features .container {
   display: grid;
   gap: 10px;  
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -187,8 +198,181 @@ header .nav .links li a.active, header .nav .links li a:hover{
   margin: 16px 0px;
 }
 
+.about {
+  width: 100%;
+}
+
+.about .container {
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.about .container .row {
+  width: 100%;
+  display: flex;
+  padding: 25px;
+  padding-bottom: 40px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about .container .row:last-child {
+  border-top: 1px solid #999898;
+  flex-direction: row-reverse;
+}
+
+
+.about .container .row .about-txt {
+  width: 50%;
+}
+
+.about .container .row .about-txt h2{ 
+  font-weight: 500;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.about .container .row .about-txt p{
+  line-height: 32.5px;
+}
+
+.about .container .row .img img {
+  width: 50%;
+  justify-self: center;
+}
+.about .container .row  .img img {
+  justify-self: center;
+  width: 100%;
+  justify-self: center;
+}
+
+body {
+  height: 1000vh;
+}
+
+.work-porcess{
+  width: 100%;
+  text-align: center;
+  padding: 80px 0px;
+  background-image: url("/assets/images/fun-facts-bg.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin-top: 90px;
+}
+
+.work-porcess .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.work-porcess .container .head{
+  width: 550px;
+  max-width: 100%;
+}
+
+.work-porcess .container .head h2,.work-porcess .container .head p{
+  color: #Fff;
+  margin-top: 10px;
+}
+
+.work-porcess .container .head h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.work-porcess .container .head p{
+  font-size: 16px;
+  color: #Fff;
+  margin-top: 10px;
+}
+
+.work-porcess .container .grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  justify-content: center;
+  gap: 20px;
+  margin-top: 80px;
+}
+
+.work-porcess .container .grid .tb {
+  background-color: white;
+  padding: 10px; 
+  width: 180px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 10px 10px 0px 5px#8a6cec;
+  transition: all 0.4s ease-in-out;
+}
+.work-porcess .container .grid .tb:hover{ 
+transform: translateY(-30px);
+}
+.work-porcess .container .grid .tb .icon{
+  padding: 10px 0px;
+}
+
+.comments {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.comments .comment {
+  padding: 20px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 0px 10px #dddd;
+}
+
+.comments .comment .icon{
+  text-align: center;  
+}
+
+.avatar-name {
+  transition: all 0.3s ease-in-out  ;
+}
+.testi {
+  padding: 20px 0px;
+}
+.avatar {
+  display: flex;
+  align-items: flex-start;
+  text-align: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+.avatar-name span{
+  color: var(--main-color);
+}
+.avatar-name:hover{ 
+  margin-left: 10px;
+}
+.avatar-name h3{
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.avatar img {
+  text-align: center;
+}
+.content-com p {
+  font-size: 15px;
+  line-height: 2;
+}
+.comments .comment div{
+  margin-block: 20px 10px;
+  
+}
+
+
+
 @media screen and (max-width:400px) {
-  .cards {
+  .container {
     width: 100%;
   }
   .card {
@@ -203,46 +387,39 @@ header .nav .links li a.active, header .nav .links li a:hover{
   }
 }
 @media screen and (max-width: 992px){
+  .container {
+    width: 90%;
+  }
+  .comments {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
   header {
     width: 700px;
   }
-  header .container .nav  {
+  header .container-head  .links {
     position: absolute;
     top: 55%;
     width: 100%;
+    padding-top: 0px;
     left: 0;
     height: 0;
-    overflow: hidden;
-    transition: all 0.4s ease-in-out; 
-  }
-  header .container .nav .links {
     display: flex;
-    padding-top: 26px;
     flex-direction: column;
     background-color: #fff;
-    width: 100%;
-    height: 0;
     overflow: hidden;
-    transition: all 0.4s ease-in-out;
-    border-radius: 0px 0px  40px 40px;
+    border-radius: 0px 0px 40px 40px;
   }
-  header .container .nav.active , header .container .nav.active .links{
-    height: 420px;
-    transition: all 0.4s ease-in-out;
-  }
-  header .container .nav .links li a:not(:last-child) {
-    border-bottom: 1px solid #eeeeee;
-  }
-  header .container .nav .links li a:hover {
-    background-color: #f1f1f1;
-  }
-  header .container .nav .links li a:first-child {
+  
+  header .container-head  .links li a{
     border-top: 1px solid #eeeeee;
   }
-  header .container .nav .links li {
+  header .container-head  .links li a:hover {
+    background-color: #f1f1f1;
+  }
+  header .container-head  .links li {
     width: 100%;
   }
-  header .container .nav .links li a {
+  header .container-head  .links li a {
     display: block;
     width: 100%;
     padding: 18px 0px;
@@ -251,8 +428,15 @@ header .nav .links li a.active, header .nav .links li a:hover{
   .menu {
     display: block;
   }
+  .about .container .row {
+    flex-direction: column !important;
+  }
+  .about .container .row .about-txt{
+    width: 80%;
+    text-align: center;
+    margin-top: 20px
+  }
 }
-
 @media screen and (max-width: 1200px){
   .features {
     position: relative;
@@ -261,12 +445,11 @@ header .nav .links li a.active, header .nav .links li a:hover{
     width: 300px;
     padding: 20px 10px;
   }
-  .cards {
+  .container {
     width: 90%;
     margin: 0px auto;
   }
 }
-
 @media screen and (max-width:700px){
   .card {
     width: 100%;
@@ -284,6 +467,9 @@ header .nav .links li a.active, header .nav .links li a:hover{
     font-size: 20px ;
     color: #eeeeee;
     margin: 15px 0px;
+  }
+  .about .container .row .about-txt{
+    width: 90%;
   }
   .btn {
     color: white;
